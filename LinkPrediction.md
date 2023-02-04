@@ -63,7 +63,7 @@ Similarity-based metrics are the simplest one in link prediction, in which for e
 
 ### 2.1.1 **Local similarity indices**
 Local indices are generally calculated using information about common neighbors and node degree. These indices **consider immediate neighbors of a node**. The following are some examples of local similarity indices with a description and method to calculate them:
-- `Common Neighbors (CN)`: In a given network or graph, the size of common neighbors for a given pair of nodes $x$ and $y$ is calculated as the size of the intersection of the two nodes neighborhoods ($\Gamma$).
+- `Common Neighbors (CN)`: In a given network or graph, the size of common neighbors for a given pair of nodes $x$ and $y$ is calculated as the size of the intersection of the two nodes neighborhoods ( $\Gamma$ ).
     $$S(x, y) = |\Gamma(x) \cap \Gamma(y)|$$
     The likelihood of the existence of a link between x and y increases with the number of common neighbors between them.
 - `Jaccard Coefficient`: This metric is similar to the Common Neighbors. Additionally, it normalizes the above score, as given below:
