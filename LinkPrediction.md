@@ -121,7 +121,7 @@ incorporated to compute the similarity score.
 ### 2.1.2 **Global similarity indices**
 Global indices are computed using entire topological information of a network. The computational complexities of such methods are higher and seem to be infeasible for large networks.
 - `Katz Index`: This index can be considered as a variant of the shortest path metric. It directly aggregates over all the paths between x and y and dumps exponentially for longer paths to penalize them. It can be expressed mathematically as:
-    $$S(x, y) = \sum_{l = 1}^{\infin}\beta^l|paths_{x, y}^{<l>}| = \sum_{l = 1}^{\infin}\beta^l(A)^l_{x, y}$$
+    $$S(x, y) = \sum_{l = 1}^{\infty}\beta^l|paths_{x, y}^{<l>}| = \sum_{l = 1}^{\infty}\beta^l(A)^l_{x, y}$$
     where, $paths_{x, y}^{<l>}$ is considered as the set of total $l$ length paths between $x$ and $y$, $\beta$ is a damping factor that controls the path weights and A is the adjacency matrix. For the convergence of above equation,
     $$\beta < \frac{1}{\lambda_1} $$
     where $\lambda_1$ is the maximum eigen value of the matrix A. <br>
