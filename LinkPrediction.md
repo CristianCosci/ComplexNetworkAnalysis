@@ -27,8 +27,8 @@ We use (`vertex ≡ node`), (`link ≡ edge`) and (`graph ≡ network`) intercha
 graph. <br>
 (|U| − |E|) number of links are termed as the *non-existing links*, and some of these links may appear in the near future when we talk about dynamic network. ***Finding such missing links (i.e., AC, BD, and AD) is the aim of link prediction***.
 
-The link prediction problem can be defined as follow: <br>
-*Suppose a graph $G_{t_0 − t_1} (V, E)$ represents a snapshot of a network during time interval $[t_0 ,t_1]$ and $E_{t_0 − t_1}$ , a set of links  present in that snapshot. The task of link prediction is to find set of links $E_{t_0' − t_1'}$ during the time interval $[t_0' ,t_1']$ where $[t_0 ,t_1] \leq [t_0' ,t_1']$.*
+The link prediction problem can be defined as follow:<br>
+*Suppose a graph* $\mathit{G\_{t\_0 − t\_1} (V, E)}$ *represents a snapshot of a network during time interval* $\mathit{[t_0 ,t_1]}$ *and* $\mathit{E_{t_0 − t_1}}$ *, a set of links  present in that snapshot. The task of link prediction is to find set of links* $\mathit{E_{t_0' − t_1'}}$ *during the time interval* $\mathit{[t_0' ,t_1']}$ *where* $\mathit{[t_0 ,t_1] \leq [t_0' ,t_1']}$ *.*
 
 The link prediction idea is useful in several domains of application. Examples include automatic hyperlink creation, website hyper-link prediction in the Internet
 and web science domain, and friend recommendation on Facebook.
