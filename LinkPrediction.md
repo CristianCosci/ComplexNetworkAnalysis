@@ -200,7 +200,34 @@ Similarity-based approaches mostly focus on the structural properties of the net
 ### 2.2.5 **Exponential random graph model (ERGM) or P-star model**
 
 ## 2.3 **Link prediction using dimensionality reduction**
+The curse of dimensionality is a well-known problem in machine learning. Some researchers employ dimension reduction techniques to tackle the above problem and apply it in the **link prediction** scenario.
+
 ### 2.3.1 **Embedding-based link prediction**
+The network embedding is considered as a dimensionality reduction technique in which higher $D$ dimensional nodes (vertices) in the graphs are mapped to a lower $d$ ($d << D$) **dimensional representation (embedding)** space by preserving the node neighborhood structures. In other words, ***find the embedding of nodes to a lower d-dimensions such that similar nodes (in the original network) have similar embedding (in the representation space)***. <br>
+In the Figure below you can see an application example of a dimensionality reduction tecnique to a graph that represent a social network. <br>
+<img src="latex/capitoli/methods/imgs/img4.png" width="80%" height="80%">
+
+The main component of the network embedding is the encoding function or encoder $f_{en}$ that map each node to the embedding space
+$$f_{en}(x) = z_x$$
+where $z_x$ is the $d$-dimensional embedding of the node $x$. The embedding matrix is $Z \in R^{d x |V|}, each column of which represents an embedding vector of a node. <br> 
+<img src="latex/capitoli/methods/imgs/img5.png" width="80%" height="80%">
+
+Now, a similarity function is $S(x, y)$ is defined that specifies how to model the vector (embedding) space relationships equivalent to the relationships in the original network, i.e.,
+$$S(x, y) \approx z_x^T z_y$$
+
+Here $S(x, y)$ is the function that reconstructs pairwise similarity values from the generated embedding. The term $S(x, y)$ is the one that differ according to the function used in different factorization-based embedding approaches.
+
+For example, `graph factorization` directly employ adjacency matrix $A$ i.e. $(S(x, y) \overset{\Delta}{=} A_{(x,y)})$ to capture first order proximity, `GraRep` selects $(S(x, y) \overset{\Delta}{=} A^2_{(x,y)})$ and `HOPE` uses other similarity measures(e.g. Jaccard neighborhood overlap). Most embedding methods realize the reconstruction objective by minimizing the loss function, L
+$$L = \sum_{(x, y) \in \{V x V \}} l(z_x^T z_y, S(x, y))$$
+
+Once the previous equation is **converged** (i.e. **trained**), one can use the trained encoder to generate nodes embedding, which can further be employed to infer missing link and other downstream machine learning tasks.
+
+Recently, some network embedding techniques have been proposed and applied successfully in link prediction problem. The `Laplacian eigenmaps`, `Logically linear embedding (LLE)`, and `Isomap` are examples based on the simple notion of embedding. Such embedding techniques are having quite complex in nature and face scalability issues. To tackle the scalability issue, graph embedding techniques have leveraged the sparsity of real-world networks. For example, `DeepWalk` extracts local information of truncated random walk and embeds the nodes in representation space by considering the walk as a sentence in the language model. It preserves higher order proximity by maximizing the probability of co-occurrence of random walk of length $2k + 1$ (previous and next $k$ nodes centered at a given node). `Node2vec` also uses a random walk to preserves higher order proximity but it is biased which is a trade-off between the `breadth-first search (BFS)` and `depth-first search (DFS)`.
+
+The experimental results show that the `Node2vec` performs better than the `Deepwalk`.
+
+In next step, **Trouillon et al.** introduced complex embedding in which simple matrix and tensor factorization have been used for link prediction that uses a vector with complex values. Such composition of complex embedding includes all possible binary relations especially symmetric and anti-symmetric relations. Recently, some more studies have been published in link prediction using embedding, for example, **Cao et al. subgraph embedding**, **Li et al. deep dynamic network embedding**, **Kazemi et al.**, etc. 
+
 ### 2.3.2 **Matrix factorization/decomposition-based link prediction**
 
 ## 2.4 **Other approaches**
