@@ -229,6 +229,24 @@ The experimental results show that the `Node2vec` performs better than the `Deep
 In next step, **Trouillon et al.** introduced complex embedding in which simple matrix and tensor factorization have been used for link prediction that uses a vector with complex values. Such composition of complex embedding includes all possible binary relations especially symmetric and anti-symmetric relations. Recently, some more studies have been published in link prediction using embedding, for example, **Cao et al. subgraph embedding**, **Li et al. deep dynamic network embedding**, **Kazemi et al.**, etc. 
 
 ### 2.3.2 **Matrix factorization/decomposition-based link prediction**
+From last decade, matrix factorization has been used in lots of papers based on link prediction and recommendation systems. Typically, the latent features are extracted and using these features, each vertex is represented in latent space, and such representations are used in a supervised or unsupervised framework for link prediction. To further **improve the prediction results, some additional node/link or other attribute information can be used**. In most of the works, non-negative matrix factorization has been used. Some authors also applied the singular value decomposition technique. Let the input data matrix is represented by $X = (x_1, x_2, ..., x_n)$ that contains $n$ data vectors as columns. Now, factorization of this matrix can be expressed as
+$$X \approx FG^T$$
+where $X \in R^{p x n}, F \in R^{p x k} , and $G \in R^{n x k}$ . Here, $F$ contains the bases of the latent space and is called the basis matrix. $G$ contains combination of coefficients of the bases for reconstructing the matrix $X$ , and is called the coefficient matrix. $k$ is the dimension of latent space $(k < n)$. Several well-known matrix factorizations are expressed based on some constraints on either of the three matrices, for example
+- `SVD`: $X_\pm \approx F_\pm G_\pm^T$
+- `NMF`: $X_+ \approx F_+ G_+^T$
+- `Semi-NMF`: $X_\pm \approx F_\pm G_+^T $
+- `Convex-NMF`: $X_\pm \approx  X_\pm W_+ G_\pm^T $
+
+In the above four equations, $Z_\pm$ represents the nature of the entries in the matrix $Z$, i.e. both positive and negative entries allowed in the matrix $Z$. In the last equation, $F = XW$ represents the convex combinations of the columns of $F$ . Generally, such a factorization problem can be modeled as the following `Frobenius norm optimization problem`
+$$min_{f, g} ||X - FG^T||^2_{fro}$$
+$$\text{subject to} F \ge 0, G \ge 0$$
+Here $||Z||^2_{fro}$ is the frobenius norm of $Z$ and the constraints represent NMF factorization. However, any of the above four constraints can be used depending on the requirement of the problem underlying. <br>
+After solving the above optimization problem, the similarity between a non-existing pair $(x, y)$ can be computed by the similarity of the $x^{th}$ and $y^{th}$ row vectors in the coefficient matrix $G$.
+
+- `Acar et al.` expressed temporal link prediction as a matrix completion problem and solve it through the `matrix and tensor factorization`. They proposed a weighted method to collapsed the temporal data in a single matrix and factorize it using `CANDECOMP/PARAFAC (CP)` tensor decomposition method. 
+- `Ma et al.` also applied matrix factorization to temporal networks where features of each network are extracted using `graph communicability` and then collapsed into a single feature matrix using `weighted collapsing tensor (WCT)`. They showed the equivalence between eigen decomposition of `Katz matrix` and `non-negative matrix factorization (NMF)` of the communicability matrix that serves as the foundation of their framework.
+- `Menon et al.` proposed a work for structural link prediction. Here, the problem is modeled as `matrix completion problem`, and `matrix factorization` are used to solve it. They introduced a supervised matrix decomposition framework that learns latent (unobserved) structural features of the graph and incorporates it with additional node/link explicit feature information to make a better prediction. Additionally, they allowed the factorization model to solve class imbalance problem by optimizing ranking loss. 
+- `Chen et al.` proposed a work, where the authors extracted topological matrix and attribute matrix and factorized these matrices using `non-negative matrix factorization`. The final score matrix is obtained by integrating these two matrices in the latent space.
 
 ## 2.4 **Other approaches**
 ### 2.4.1 **Learning-based frameworks for link prediction**
