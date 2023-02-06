@@ -19,7 +19,7 @@ Consider a simple undirected network $G(V, E)$ (Refer to the Figure 1), where $V
 
 |   |   |
 | - | - |
-|<img src="imgs/img1.png" width="100%" height="100%"> | Network representation as a graph. |
+|<img src="latex/capitoli/intro/imgs/img1.png" width="100%" height="100%"> | Network representation as a graph. |
 
 
 
@@ -56,7 +56,7 @@ Recently, numerous methodologies of link prediction have been implemented. These
 &nbsp;&nbsp;2.4.3 [**Clustering-based Link Prediction**](#243-clustering-based-link-prediction)<br>
 &nbsp;&nbsp;2.4.4 [**Structural Perturbation Method**](#244-structural-perturbation-method)<br>
 
-<img src="imgs/img2.jpg" width="60%" height="60%"> 
+<img src="latex/capitoli/methods/imgs/img2.jpg" width="60%" height="60%"> 
 
 ## 2.1 **Similarity-based methods**
 Similarity-based metrics are the simplest one in link prediction, in which for each pair $x$ and $y$, a similarity score $S(x, y)$ is calculated. The score $S(x, y)$ is based on the structural or node’s properties of the considered pair. The non-observed links (i.e., $U − E^T$ ) are assigned scores according to their similarities. **The pair of nodes having a higher score represents the predicted link between them**. The similarity measures between every pair *can be calculated using several properties of the network*, one of which is structural property. Scores based on this property can be grouped in several categories like **local and global**, and so on.
@@ -87,7 +87,7 @@ shows good performance on heterogeneous networks with a high clustering coeffici
 - `CAR-based Common Neighbor Index (CAR)`: CAR-based indices are presented based on the assumption that the link existence between two nodes is more likely if their common neighbors are members of a local community (local-community-paradigm (LCP) theory). In other words, the likelihood existence increases with the number of links among the common neighbors (local community links (LCLs)) of the seed node pair as described in the following figure.
     $$S(x, y) = CN(x, y) \text{ x } LCL(x, y) = CN(x, y) \text{ x } \sum_{z \in \Gamma(x) \cap \Gamma(y)} \frac{|\gamma(z)|}{2} $$
     where $CN(x, y) = |\Gamma(x) ∩ \Gamma(y)|$ is number of common neighbors. $LCL(x, y)$ refers to the number of local community links which are defined as the links among the common neighbors of seed nodes x and y. $\gamma(z)$ is the subset of neighbors of node $z$ that are also common neighbors of $x$ and $y$. <br>
-    <img src="imgs/img3.png" width="70%" height="70%"> 
+    <img src="latex/capitoli/methods/imgs/img3.png" width="70%" height="70%"> 
 - `CAR-based Adamic/Adar Index (CAA)`: If $LCL$ is considered as an accuracy enhancer, then the $CAA$ index is obtained by incorporating the $LCL$ theory to the well known AA index and mathematically expressed by the equation given below.
     $$S(x, y) = \sum_{z \in \Gamma(x) \cap \Gamma(y)} \frac{|\gamma(z)|}{\log_2(k_z)} $$
 - `CAR-based Resource Allocation Index (CRA)`: Is a general application of the LCL theory to other indices and generate the CRA index by incorporating this concept into the existing RA index of the literature. Mathematically, the CRA can be expressed as
