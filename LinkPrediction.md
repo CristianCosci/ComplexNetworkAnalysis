@@ -250,6 +250,12 @@ After solving the above optimization problem, the similarity between a non-exist
 
 ## 2.4 **Other approaches**
 ### 2.4.1 **Learning-based frameworks for link prediction**
+Earlier described approaches (e.g., similarity and probabilistic methods) deal with the computing a score of each non-observed link either by a similarity or a probabilistic function. However, **the link prediction problem can also be modeled as a learning-based model** to exploit graph topological features and attribute information. The problem is cast as a **supervised classification model** where a **point** (i.e., training data) **corresponds to a vertex-pair in the network**, and the **label** of the point **represents the presence or absence of an edge (link) between the pair**. <br>
+In other words, _consider a vertex-pair $(x, y)$ in the graph $G(V, E)$ and the label of the corresponding data point in the classification model is $l_{(x,y)}$_. Then,
+$$l_{(x, y)}= \begin{cases} +1 \text{ if } (x, y) \in E \\ -1 \text{ if } (x, y) \notin E  \end{cases}$$
+**This is typically a binary classification task** where several classifiers (e.g., `decision tree, naive Bayes, support vector machine`, etc.) can be employed to predict the label of unknown data points (corresponding to missing links in the network). One of the major challenges of this model (i.e., machine learning) is the **selection of appropriate feature set**. Majority of the existing research works extract feature sets from the network topology (i.e., topological information of the network). These **features are generic** and domain-independent that are **applicable to any network**. Such features are typical, `neighborhood, and path-based features`.  <br>
+Some other works concentrate on extracting node and edge features that play a crucial role to improve the performance of link prediction. The cost of extraction of such features is cheap and easy, while the main disadvantage is the domain-specific nature of them.
+
 ### 2.4.2 **Information theory-based link prediction**
 ### 2.4.3 **Clustering-based Link Prediction**
 ### 2.4.4 **Structural Perturbation Method**
