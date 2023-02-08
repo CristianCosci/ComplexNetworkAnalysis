@@ -203,13 +203,13 @@ Similarity-based approaches mostly focus on the structural properties of the net
 The curse of dimensionality is a well-known problem in machine learning. Some researchers employ dimension reduction techniques to tackle the above problem and apply it in the **link prediction** scenario.
 
 ### 2.3.1 **Embedding-based link prediction**
-The network embedding is considered as a dimensionality reduction technique in which higher $D$ dimensional nodes (vertices) in the graphs are mapped to a lower $d$ ($d << D$) **dimensional representation (embedding)** space by preserving the node neighborhood structures. In other words, ***find the embedding of nodes to a lower d-dimensions such that similar nodes (in the original network) have similar embedding (in the representation space)***. <br>
+The network embedding is considered as a dimensionality reduction technique in which higher $D$ dimensional nodes (vertices) in the graphs are mapped to a lower $d$ ( $d << D$ ) **dimensional representation (embedding)** space by preserving the node neighborhood structures. In other words, ***find the embedding of nodes to a lower d-dimensions such that similar nodes (in the original network) have similar embedding (in the representation space)***. <br>
 In the Figure below you can see an application example of a dimensionality reduction tecnique to a graph that represent a social network. <br>
 <img src="latex/capitoli/methods/imgs/img4.png" width="80%" height="80%">
 
 The main component of the network embedding is the encoding function or encoder $f_{en}$ that map each node to the embedding space
 $$f_{en}(x) = z_x$$
-where $z_x$ is the $d$-dimensional embedding of the node $x$. The embedding matrix is $Z \in R^{d x |V|}, each column of which represents an embedding vector of a node. <br> 
+where $z_x$ is the $d$-dimensional embedding of the node $x$. The embedding matrix is $Z \in R^{d x |V|}$ , each column of which represents an embedding vector of a node. <br> 
 <img src="latex/capitoli/methods/imgs/img5.png" width="80%" height="80%">
 
 Now, a similarity function is $S(x, y)$ is defined that specifies how to model the vector (embedding) space relationships equivalent to the relationships in the original network, i.e.,
@@ -251,8 +251,15 @@ After solving the above optimization problem, the similarity between a non-exist
 ## 2.4 **Other approaches**
 ### 2.4.1 **Learning-based frameworks for link prediction**
 Earlier described approaches (e.g., similarity and probabilistic methods) deal with the computing a score of each non-observed link either by a similarity or a probabilistic function. However, **the link prediction problem can also be modeled as a learning-based model** to exploit graph topological features and attribute information. The problem is cast as a **supervised classification model** where a **point** (i.e., training data) **corresponds to a vertex-pair in the network**, and the **label** of the point **represents the presence or absence of an edge (link) between the pair**. <br>
-In other words, _consider a vertex-pair $(x, y)$ in the graph $G(V, E)$ and the label of the corresponding data point in the classification model is $l_{(x,y)}$_. Then,
-$$l_{(x, y)}= \begin{cases} +1 \text{ if } (x, y) \in E \\ -1 \text{ if } (x, y) \notin E  \end{cases}$$
+In other words, _consider a vertex-pair_ $\mathit{(x, y)}$ _in the graph_ $\mathit{G(V, E)}$ _and the label of the corresponding data point in the classification model is_ $\mathit{l_{(x,y)}}$ . Then,
+
+$$l_{(x, y)}= 
+    \begin{cases} 
+        +1 \ \text{ if } (x, y) \in E\\ 
+        -1 \ \text{ if } (x, y) \notin E  
+    \end{cases}
+$$
+
 **This is typically a binary classification task** where several classifiers (e.g., `decision tree, naive Bayes, support vector machine`, etc.) can be employed to predict the label of unknown data points (corresponding to missing links in the network). One of the major challenges of this model (i.e., machine learning) is the **selection of appropriate feature set**. Majority of the existing research works extract feature sets from the network topology (i.e., topological information of the network). These **features are generic** and domain-independent that are **applicable to any network**. Such features are typical, `neighborhood, and path-based features`.  <br>
 Some other works concentrate on extracting node and edge features that play a crucial role to improve the performance of link prediction. The cost of extraction of such features is cheap and easy, while the main disadvantage is the domain-specific nature of them.
 
@@ -262,7 +269,11 @@ Several complex networks have utilized the concept of **information theory to co
 **Tan et al.** posed the link prediction problem in the `framework of information theory`. They mainly focus on local assortativity to capture local structural properties of the network and showed that `mutual information (MI)` method performs well on both low and highly correlated networks. Motivated by, **Zhu, B. and Xia** added more local features (i.e., links information of neighbors of the seed nodes as well as their common neighbors) in their framework and called it as `neighbor set information (NSI) index`. Thus, they showed that the different features could be combined in an information-theoretic model to improve the link prediction accuracy.
 
 **Xu et al.** considered path entropy as a similarity metric for the link prediction problem. The authors assumed that there is no correlation among the degrees of the nodes in the network. Consider the following notations based on their paper: $L^0_{xy}$ shows no link exists between two vertices $x$ and $y$, and the corresponding existence is represented by $L^1_{xy}$. Probability of existence of a link between the above two vertices is given as
-$$P(L^1_{xy}) = 1 - P(L^0_{xy}) = 1 - \frac{C^{k_y}_{M-k_x}}{C^{k_y}_M}$$
+
+$$
+    P(L^1_{xy}) = 1 - P(L^0_{xy}) = 1 - \frac{C^{k_y}_{M-k_x}}{C^{k_y}_M}
+$$
+
 where $C_M^{k_Y}$ represents the number of candidate link sets for the vertex $y$ with all links incident with $y$ and $C^{k_y}_{M−k_x}$ denotes the number of candidate link sets for the vertex $y$ with all links incident with $y$ but none of them is incident with $x$. <br>
 Outcome results on several networks demonstrate that the similarity index based on path entropy performs better than other indices in terms of prediction accuracy and precision. **Xu et al.** extend the previous work to the weighted network by considering the weight of the paths. Recently, some more efforts have been applied in this direction based on different features of the networks like influential nodes, combining node attributes with `structural similarity, local likelihood, and maximal entropy random walk`.
 
