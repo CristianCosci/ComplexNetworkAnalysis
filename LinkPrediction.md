@@ -204,7 +204,7 @@ The curse of dimensionality is a well-known problem in machine learning. Some re
 
 ### 2.3.1 **Embedding-based link prediction**
 The network embedding is considered as a dimensionality reduction technique in which higher $D$ dimensional nodes (vertices) in the graphs are mapped to a lower $d$ ( $d << D$ ) **dimensional representation (embedding)** space by preserving the node neighborhood structures. In other words, ***find the embedding of nodes to a lower d-dimensions such that similar nodes (in the original network) have similar embedding (in the representation space)***. <br>
-In the Figure below you can see an application example of a dimensionality reduction tecnique to a graph that represent a social network. <br>
+In the Figure below you can see an application example of a dimensionality reduction technique to a graph that represent a social network. <br>
 <img src="latex/capitoli/methods/imgs/img4.png" width="80%" height="80%">
 
 The main component of the network embedding is the encoding function or encoder $f_{en}$ that map each node to the embedding space
