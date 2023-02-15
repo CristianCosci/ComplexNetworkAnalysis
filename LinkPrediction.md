@@ -2,8 +2,7 @@
 ***Definition:*** :key:<br>
 Link prediction finds missing links (in static networks) or predicts the likelihood of future links (in dynamic networks).
 
-There exists a wide range of link prediction techniques like similarity-based indices, probabilistic methods, dimensionality
-reduction approaches, etc.
+There exists a wide range of link prediction techniques like similarity-based indices, probabilistic methods, dimensionality reduction approaches, etc.
 
 ## **Index**
 1. [**Introduction**](#1-introduction-and-background)
@@ -11,8 +10,7 @@ reduction approaches, etc.
 
 
 # 1. **Introduction and Background**
-A **social network** (a more general term is a complex network) is a standard approach to model communication in a group or community of persons. Such networks can be represented as a graphical model in which a node maps to a person or social entity, and a link corresponds to an association or collaboration between corresponding persons or social entities. When links can be deleted or added, during time, the network is called **dynamic**. Lots of issues arise when we study a social network,
-some of which are changing association patterns over time, factors that drive those associations, and the effects of those associations to other nodes. Here, we address a specific problem termed as link prediction.
+A **social network** (a more general term is a complex network) is a standard approach to model communication in a group or community of persons. Such networks can be represented as a graphical model in which a node maps to a person or social entity, and a link corresponds to an association or collaboration between corresponding persons or social entities. When links can be deleted or added, during time, the network is called **dynamic**. Lots of issues arise when we study a social network, some of which are changing association patterns over time, factors that drive those associations, and the effects of those associations to other nodes. Here, we address a specific problem termed as link prediction.
 
 #### **Problem Characterization**
 Consider a simple undirected network $G(V, E)$ (Refer to the Figure 1), where $V$ characterizes a vertex-set and $E$, the link-set.
