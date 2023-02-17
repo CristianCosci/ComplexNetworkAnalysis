@@ -278,6 +278,14 @@ where $C_M^{k_Y}$ represents the number of candidate link sets for the vertex $y
 Outcome results on several networks demonstrate that the similarity index based on path entropy performs better than other indices in terms of prediction accuracy and precision. **Xu et al.** extend the previous work to the weighted network by considering the weight of the paths. Recently, some more efforts have been applied in this direction based on different features of the networks like influential nodes, combining node attributes with `structural similarity, local likelihood, and maximal entropy random walk`.
 
 ### 2.4.3 **Clustering-based Link Prediction**
+This paragraph gives an overview of the clustering-based link prediction. **Huang** presented a paper on `graph topology-based link prediction` where a **generalized clustering coefficient is used as a predictive parameter**. The author introduces a cycle formation model that _shows the relationship between link occurrence probability and its ability to form different length cycles_. This model suggests that the **occurrence probability of a particular link depends on the number of different lengths cycles formed by adding this link**. The model is based on the assumption of the stationary property of the degree of clustering of the network. This model captures longer cycles by extending the higher-order clustering coefficients and defines the generalized clustering coefficient $C(k)$ as
+$$C(k) = \frac{\text{number of k-lenght cycles}}{\text{number of k-length paths}}$$
+where $k$ is the degree of the cycle formation model.
+
+The author treats the link occurrence probability as governed by $t$ link generation mechanisms $g(1), g(2),...,g(k)$ of cycle formation model, each described by a single parameter $c_1, c_2,..., c_k$. The above mentioned link generation mechanism can be understood with the help of the Figure below
+
+<img src="latex/capitoli/methods/imgs/img6.jpg" width="60%" height="60%"> 
+
 
 ### 2.4.4 **Structural Perturbation Method**
 ***Lu et al.*** introduced a new framework of computing predictability of links in the networks. They coined a **structural consistency index** to quantify the link predictability. This index is based on the assumption that "_links in a network are highly predictable if no significant changes occur in the structural feature after the addition or deletion of a small fraction of the link_". Based on this index, they proposed a new similarity index, namely `structural perturbation method (SPM)`. The experimental results show the outstanding performance compared to the state-of-the-art in their paper.
