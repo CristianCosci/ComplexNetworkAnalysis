@@ -191,7 +191,7 @@ Similarity-based approaches mostly focus on the structural properties of the net
 ***Quasi-local approaches*** extract more structural information than local and somehow less information compared to the global.
 
 ## 2.2 **Probabilistic and maximum likelihood models**
-For a given network $G(V, E)$, ***the probabilistic model optimizes an objective function to set up a model that is composed of several parameters***. Observed data of the given network can be estimated by this model nicely. At that point, the likelihood of the presence of a non-existing link $(i, j)$ is evaluated using conditional probability $P(A_{i j} = 1 | \Teta )$. Several `probabilistic models` and `maximum likelihood models` have been proposed in the literature to **infer missing links in the networks**. 
+For a given network $G(V, E)$, ***the probabilistic model optimizes an objective function to set up a model that is composed of several parameters***. Observed data of the given network can be estimated by this model nicely. At that point, the likelihood of the presence of a non-existing link $(i, j)$ is evaluated using conditional probability $P(A_{i j} = 1 | \Theta )$. Several `probabilistic models` and `maximum likelihood models` have been proposed in the literature to **infer missing links in the networks**. 
 
 **The probabilistic models normally require more information like node or edge attribute knowledge in addition to structural information** Extracting these attribute information is not easy; moreover, the parameter tuning is also a big deal in such models that limit their applicability. *Maximum likelihood methods are complex and time-consuming*, so these models are not suitable for real large networks.
 
@@ -224,13 +224,13 @@ These models are based on the assumption that the structures of many real networ
 
 Some studies suggest that many real networks, like biochemical networks (protein interaction networks, metabolic networks, or genetic regulatory networks), Internet domains, etc. are hierarchically structured. In hierarchical networks, vertices are divided into groups, which are further sub-divided into subgroups and so forth over multiple scales. **Clauset et al.** proposed a probabilistic model that takes a hierarchical structure of the network into account. The model infers hierarchical information from the network data and further applies it to predict missing links.
 
-The hierarchical structures are represented using a tree (binary), or dendrogram, where, the leaves (i.e., $n$ ) represent the number of total vertices in the network and each internal vertex out of ( $n - 1$ ) corresponds to the group of vertices descended from it. Each internal vertex $r$ is associated with a probability $p_r$ , then the existing edge probability $p_{xy}$ between two vertices $x$ and $y$ is given by $p_{xy} = p_r$ where, $r$ is their lowest common ancestor. The hierarchical random graph is then, represented by the dendrogram $D^{\star}$ with the set of probability $\left{ p_r \right}$ as $\left(D^{\star},\{p_r\} \right)$. Now the learning task is to find the hierarchical random graph(s) that best estimates the observed real-world network data. Assuming all possible dendrograms to be equally likely, Bayes theorem says that the probability of the dendrogram $\left(D^{\star}, \{p_r\} \right)$ that best estimates the data is proportional to the posterior probability or likelihood, $L$ from which the model generates the observed network and our goal is to maximize $L$ . The likelihood of a hierarchical random graph $\right(D^{\star},\{p_r\} \right)$ is computed using the following equation
+The hierarchical structures are represented using a tree (binary), or dendrogram, where, the leaves (i.e., $n$ ) represent the number of total vertices in the network and each internal vertex out of ( $n - 1$ ) corresponds to the group of vertices descended from it. Each internal vertex $r$ is associated with a probability $p_r$ , then the existing edge probability $p_{xy}$ between two vertices $x$ and $y$ is given by $p_{xy} = p_r$ where, $r$ is their lowest common ancestor. The hierarchical random graph is then, represented by the dendrogram $D^{\star}$ with the set of probability $\\{ p_r \\}$ as $\left( D^{\star},\\{p_r\\} \right)$. Now the learning task is to find the hierarchical random graph(s) that best estimates the observed real-world network data. Assuming all possible dendrograms to be equally likely, Bayes theorem says that the probability of the dendrogram $\left(D^{\star}, \\{p_r\\} \right)$ that best estimates the data is proportional to the posterior probability or likelihood, $L$ from which the model generates the observed network and our goal is to maximize $L$ . The likelihood of a hierarchical random graph $\left(D^{\star},\\{p_r\\} \right)$ is computed using the following equation
 
 $$
-    L(D^{\star}, \{p_r\}) = \prod_{r \in D^{\star}} p_r^{E_r} (1-p_r)^{L_r R_r - Er},
+    L(D^{\star}, \\{p_r\\}) = \prod_{r \in D^{\star}} p_r^{E_r} (1-p_r)^{L_r R_r - Er},
 $$
 
-where $L_r$ and $R_r$ are the left and right subtree rooted at $r$, and $E_r$ is the number of links in the network whose endpoints have $r$ as their lowest common ancestor in $D^{\star}$ . The above equation assumes the convention $0^0 = 1$. For a given dendrogram $D^{\star}$ , it is easy to compute the probability $p_r$ that maximizes $L(D^{\star},{p_r})$ i.e.
+where $L_r$ and $R_r$ are the left and right subtree rooted at $r$, and $E_r$ is the number of links in the network whose endpoints have $r$ as their lowest common ancestor in $D^{\star}$ . The above equation assumes the convention $0^0 = 1$. For a given dendrogram $D^{\star}$ , it is easy to compute the probability $p_r$ that maximizes $L(D^{\star}, \\{p_r\\})$ i.e.
 
 $$
     \overline{p_r} = \frac{E_r}{L_r R_r}.
@@ -249,7 +249,7 @@ Hierarchical structures may not represent most networks. A more general approach
 The link reliability $R_{xy}$ between the two vertices $x$ and $y$ is
 
 $$
-    R_{xy} = p_{BM} (A_{xy = 1 | A^0}).
+    R_{xy} = p_{BM} (A_{xy} = 1 | A^0).
 $$
 
 i.e. probability that the link truly exists given the observed network $A^0$, the block model $BM$ .
@@ -260,11 +260,9 @@ $$
     R_{xy} = \frac{1}{Z} \sum_{P \in P^{\star}} \left( \frac{l^{0}_{\sigma_x \sigma_y} + 1}{r^{0}_{\sigma_x \sigma_y + 2}} \right) \text{ exp } \left[ -H(P) \right],
 $$
 
-where the sum is over all possible partitions $P^{\star}$ of the network into groups, $\sigma_x$ and $\sigma_y$ are vertices $x$ and $y$ groups in partition $P$ respectively. Moreover, $l^{0}_{\sigma_{\alpha} \sigma{\beta}}$ and $r^{0}_{\sigma_{\alpha} \sigma{\beta}}$ are the number of links and maximum possible links in the observed network between groups $\alpha$ and $\beta$ . The function $H(P)$ is
+where the sum is over all possible partitions $P^{\star}$ of the network into groups, $\sigma_x$ and $\sigma_y$ are vertices $x$ and $y$ groups in partition $P$ respectively. Moreover, $l^{0}_{1}$ and $r^{0}_{\sigma_{\alpha} \sigma{\beta}}$ are the number of links and maximum possible links in the observed network between groups $\alpha$ and $\beta$ . The function $H(P)$ is
 
-$$
-    H(P) = \sum_{\alpha \leq \beta} \left[ ln \left( r_{\alpha \beta} \right) + ln \left( \binom r_{\alpha \beta}l^{0}_{\alpha \beta} \right)\right],
-$$
+$$ H(P) = \sum_{\alpha \leq \beta} \left[ ln \left( r_{\alpha \beta} \right) + ln \left( \binom r_{\alpha \beta}l^{0}_{\alpha \beta} \right)\right], $$
 
 and $Z = \sum_{P \in P^{\star}} \text{ exp } \left[ -H(P) \right]$ .
 
