@@ -248,9 +248,7 @@ Hierarchical structures may not represent most networks. A more general approach
 
 The link reliability $R_{xy}$ between the two vertices $x$ and $y$ is
 
-$$
-    R_{xy} = p_{BM} (A_{xy} = 1 | A^0).
-$$
+$$R_{xy} = p_{BM} (A_{xy} = 1 | A^0).$$
 
 i.e. probability that the link truly exists given the observed network $A^0$, the block model $BM$ .
 
@@ -260,10 +258,12 @@ $$
     R_{xy} = \frac{1}{Z} \sum_{P \in P^{\star}} \left( \frac{l^{0}_{\sigma_x \sigma_y} + 1}{r^{0}_{\sigma_x \sigma_y + 2}} \right) \text{ exp } \left[ -H(P) \right],
 $$
 
-where the sum is over all possible partitions $P^{\star}$ of the network into groups, $\sigma_x$ and $\sigma_y$ are vertices $x$ and $y$ groups in partition $P$ respectively. Moreover, $l^{0}_{1}$ and $r^{0}_{\sigma_{\alpha} \sigma{\beta}}$ are the number of links and maximum possible links in the observed network between groups $\alpha$ and $\beta$ . The function $H(P)$ is
+where the sum is over all possible partitions $P^{\star}$ of the network into groups, $\sigma_x$ and $\sigma_y$ are vertices $x$ and $y$ groups in partition $P$ respectively. Moreover, $l^0_1$ and $r^0_{\sigma_{\alpha} \sigma_{\beta}}$ are the number of links and maximum possible links in the observed network between groups $\alpha$ and $\beta$ . The function $H(P)$ is 
 
-$$ H(P) = \sum_{\alpha \leq \beta} \left[ ln \left( r_{\alpha \beta} \right) + ln \left( \binom r_{\alpha \beta}l^{0}_{\alpha \beta} \right)\right], $$
+$$H(P) = \sum_{\alpha \leq \beta} \left[ \ln \left( r_{\alpha \beta} \right) + \ln \binom {r_{\alpha \beta}}{l^0_{\alpha \beta}} \right],$$
 
+
+    
 and $Z = \sum_{P \in P^{\star}} \text{ exp } \left[ -H(P) \right]$ .
 
 Practically, solving equation $R_{xy} = \ldots$ , i.e., summing over all possible partitions is too complex even for a small network. However, the Metropolis algorithm can be used to correctly sample the relevant partitions and obtain link reliability estimates.
