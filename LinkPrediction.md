@@ -200,7 +200,7 @@ For a given network $G(V, E)$, ***the probabilistic model optimizes an objective
 
 They presented an idea of a central neighborhood set derived from the local topology of the considered node-pair, which is relevant information for the estimation of a link between them. They computed non-derivable frequent itemsets (i.e., those itemsets whose occurrence statistics can not be derived from other itemset patterns) from the network events log data, which is further used as training data for the model. An event corresponds to a publication of a paper (i.e., authors’ interactions in the paper is a an event, and a set of such events is the event log) in the Coauthorship network. The model is shown in the following Figure, which considers the approach described below.
 
-<img src="latex/capitoli/methods/imgs/img7.png" width="80%" height="80%">
+<img src="latex/capitoli/methods/imgs/img7.png" width="80%" height="60%">
 
 
 First, the central neighborhood set between $x$ and $y$ is calculated based on local event log data. One of the usual ways to find the central neighborhood set is to find the **shortest path between two vertices of specified length**, and the vertices are lying on this path can be included in the required set. There can be more than one shortest path between two vertices, so more neighborhood sets can be possible. Neighborhood sets of shorter lengths and more frequent (frequency score is used when more shortest paths of the same length are available) are chosen for the central neighborhood set. The authors considered the shortest path up to length 4 since the nodes lying on the shorter length path are more relevant.
@@ -278,6 +278,7 @@ non-existing $+$ missing/spurious links).
 Probabilistic and maximum likelihood methods extract useful features and valuable correlation among the data using hierarchical and stochastic block models, which result in significant improvements in prediction results as compared to some similarity-based methods. However, these are **quite complex and time-consuming even on small datasets** that limit their applicability on large scale real-world network datasets.
 
 ### 2.2.5 **Exponential random graph model (ERGM) or P-star model**
+`Exponential random graphs` were first first studied by `Holland and Leinhardt`. `ERGM` is an ensemble model where one defines it as consisting of a set of all simple undirected graphs and specifies a probability corresponding to each graph in the ensemble. Properties of the `ERGM` is computed by averaging over the ensemble. `Pan et al.` also proposed a similar probabilistic framework (ERGM) to find missing and spurious links in the network. They employed predefined structural Hamiltonian for the score computation. The Hamiltonian is selected based on some organizing principle such that the observed network can have lower Hamiltonian than its randomized one.
 
 ## 2.3 **Link prediction using dimensionality reduction**
 The curse of dimensionality is a well-known problem in machine learning. Some researchers employ dimension reduction techniques to tackle the above problem and apply it in the **link prediction** scenario.
