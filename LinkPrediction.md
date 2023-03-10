@@ -7,6 +7,7 @@ There exists a wide range of link prediction techniques like similarity-based in
 ## **Index**
 1. [**Introduction**](#1-introduction-and-background)
 2. [**Methods description**](#2-existing-methods-📑)
+3. [**References**](#references)
 
 
 # 1. **Introduction and Background**
@@ -118,7 +119,7 @@ incorporated to compute the similarity score.
 
 ### 2.1.2 **Global similarity indices**
 Global indices are computed using entire topological information of a network. The computational complexities of such methods are higher and seem to be infeasible for large networks.
-- `Katz Index`: This index can be considered as a variant of the shortest path metric. It directly aggregates over all the paths between x and y and dumps exponentially for longer paths to penalize them. It can be expressed mathematically as:
+- `Katz Index`([reference paper](https://link.springer.com/article/10.1007/BF02289026)): This index can be considered as a variant of the shortest path metric. It directly aggregates over all the paths between x and y and dumps exponentially for longer paths to penalize them. It can be expressed mathematically as:
     $$S(x, y) = \sum_{l = 1}^{\infty}\beta^l|paths_{x, y}^{<l>}| = \sum_{l = 1}^{\infty}\beta^l(A)^l_{x, y}$$
     where, $paths_{x, y}^{<l>}$ is considered as the set of total $l$ length paths between $x$ and $y$, $\beta$ is a damping factor that controls the path weights and A is the adjacency matrix. For the convergence of above equation,
     $$\beta < \frac{1}{\lambda_1} $$
@@ -387,3 +388,13 @@ $$p_{x,y}(c_1, ..., c_k) = \frac{c_1 \prod_{i=2}^{k} c_i^{|path^i_{x,y}|}}{c_1 \
 
 ### 2.4.4 **Structural Perturbation Method**
 ***Lu et al.*** introduced a new framework of computing predictability of links in the networks. They coined a **structural consistency index** to quantify the link predictability. This index is based on the assumption that "_links in a network are highly predictable if no significant changes occur in the structural feature after the addition or deletion of a small fraction of the link_". Based on this index, they proposed a new similarity index, namely `structural perturbation method (SPM)`. The experimental results show the outstanding performance compared to the state-of-the-art in their paper.
+
+
+<hr>
+
+## **References**
+All of the methods described in previous sections were taken from [Link prediction techniques, applications, and performance: A survey](https://www.sciencedirect.com/science/article/abs/pii/S0378437120300856). It is a survey abouts a lot of link prediction methods, techniques and their relative performances. 
+
+So, the scope of this repository its only to produce and example of link-prediction use cases using a self-made python library in which we implemented some of the methods early described. 
+
+We are not the owner of the upper methods description. We hope that this will be useful for study and works by other.
