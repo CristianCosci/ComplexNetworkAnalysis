@@ -1,7 +1,7 @@
 ID,eta,Sesso,alloggio_pendolare,tempo_libero,pranzo,studiare,fuori
 199,19,Maschio,Alloggio a Perugia,"Giocare ai Videgames, Praticare Sport, Uscire, Guardare serie TV, film o anime",,,
 141,19,Maschio,Alloggio a Perugia,"Programmare, Giocare ai Videgames, Uscire, Guardare serie TV, film o anime",,,
-87,20,Maschio,Faccio il pendolare,Praticare Sport,178,202 178,203
+87,20,Maschio,Faccio il pendolare,Praticare Sport,178,1-2,203
 101,19,Maschio,Alloggio a Perugia,"Programmare, Giocare ai Videgames, Guardare serie TV, film o anime, Disegnare",203,203,203
 210,21,Maschio,Alloggio a Perugia,"Programmare, Praticare Sport, Uscire, Leggere libri, Leggere fumetti",,,
 144,19,Femmina,Faccio il pendolare,"Programmare, Giocare ai Videgames, Praticare Sport, Leggere libri, Guardare serie TV, film o anime",107,107,107
@@ -22,7 +22,6 @@ ID,eta,Sesso,alloggio_pendolare,tempo_libero,pranzo,studiare,fuori
 130,28,Maschio,Faccio il pendolare,"Giocare ai Videgames, Leggere libri, Leggere fumetti, Guardare serie TV, film o anime",,,
 108,19,Maschio,Faccio il pendolare,"Programmare, Giocare ai Videgames, Uscire, Guardare serie TV, film o anime",178 134 201,178 134,134 201
 196,20,Maschio,Alloggio a Perugia,"Programmare, Giocare ai Videgames, Praticare Sport, Guardare serie TV, film o anime",,122 136,122 136
-152,19,Maschio,Alloggio a Perugia,"Giocare ai Videgames, Pianoforte classico",,,
 178,19,Femmina,Faccio il pendolare,"Programmare, Leggere libri",,164,
 179,19,Maschio,Alloggio a Perugia,"Programmare, Giocare ai Videgames, Praticare Sport, Guardare serie TV, film o anime",,,
 187,20,Maschio,Faccio il pendolare,"Giocare ai Videgames, Praticare Sport, Uscire",118 201 205,118,
@@ -39,3 +38,9 @@ ID,eta,Sesso,alloggio_pendolare,tempo_libero,pranzo,studiare,fuori
 115,19,Femmina,Alloggio a Perugia,"Uscire, Leggere libri, Guardare serie TV, film o anime",134 200 197 136 111 215 83 212 175 ,134 197 136 212 175 ,134 197 136 212 175
 173,40,Maschio,Alloggio a Perugia,"Programmare, Leggere libri",,,
 181,21,Maschio,Faccio il pendolare,"Programmare, Giocare ai Videgames, Leggere libri, Guardare serie TV, film o anime",,,
+151,20,Maschio,Faccio il pendolare,"Programmare, Giocare ai Videgames, Praticare Sport, Uscire, Guardare serie TV, film o anime",,,
+152,20,Maschio,Alloggio a Perugia,"Giocare ai Videgames, Pianoforte",,,
+194,20,Femmina,Faccio il pendolare,"Uscire, Leggere libri, Leggere fumetti, Guardare serie TV, film o anime",,,
+180,19,Femmina,Faccio il pendolare,"Guardare serie TV, film o anime",178,178,178
+120,19,Maschio,Faccio il pendolare,"Giocare ai Videgames, Uscire, Leggere fumetti",,,202
+114,20,Maschio,Alloggio a Perugia,"Giocare ai Videgames, Praticare Sport, Uscire, Guardare serie TV, film o anime",,134 136 215 83 212 115,134 136 215 83 212 115
