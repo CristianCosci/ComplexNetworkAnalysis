@@ -1,2 +1,4 @@
 pandas
+numpy
 networkx
+social-network-link-prediction
