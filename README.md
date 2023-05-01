@@ -27,14 +27,30 @@ In particular, various information was collected for each user using a form, suc
 For this type of analysis, we don't really need any other data than just the links and links already present in the students' social network.
 
 ### Library and methods used :green_book:
-To analyze the social network we used a library implemented by us called [] which can be found [here](libink).
+To analyze the social network we used a library implemented by us called `Complex-Network-Link-Prediction` which can be found [here](https://github.com/Typing-Monkeys/social-network-link-prediction).
 
 This library allows you to use some of the main link prediction methods, starting from methods based on similarity, to probabilistic methods and so on.
 
 Some of the methods used are listed below (the chosen methods are just some of the possible ones that can be used, consult the library and its documentation to see all the methods):
-- methods list
-- 
-- 
+- **Similarity Approach**
+    - ***Local Similarity***
+        - common_neighbors
+        - adamic_adar
+        - jaccard
+        - node_clustering
+    - ***Gloabal Similarity***
+        - katz_index
+        - link_prediction_rwr
+        - sim_rank
+    - ***Quasi Local Similarity***
+        - local_path_index
+        - path_of_length_three
+- **Probabilistic Method**
+    - stochastic_block_model
+- **Information Theory Approach**
+    - path_entropy
+
+(For more information about each method implementation see the [library documentation](https://typing-monkeys.github.io/social-network-link-prediction/))
 
 For a more in-depth explanation of each method, we refer to the `LinkPrediction.md` file  :open_file_folder: present in this repository, which is based on a survey of methods for link prediction in which it describes the main methods we have implemented: [Link prediction techniques, applications, and performance: A survey](https://www.sciencedirect.com/science/article/abs/pii/S0378437120300856).
 
@@ -56,18 +72,12 @@ To use the project, you need to perform the following steps:
     ```bash
     source ACO_project/bin/activate
     ```
-- Move to project dir and Install requiremenst
+- Move to project dir and Install requiremenst 
     ```bash
     pip install -r requirements.txt
     ```
 
 3. **Run the code**: The code comes in a Python Jupyter Notebook, which can be run using Jupyter. The code imports the dataset, performs data analysis and returns the results.
-
-### Requirements :no_entry:
-To run the project correctly, the following dependencies need to be installed.
-```txt
-requirements to insert
-```
 
 <hr>
 

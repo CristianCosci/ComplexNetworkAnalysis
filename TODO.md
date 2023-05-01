@@ -1,4 +1,6 @@
 TODO
-- pubblicare repository così è possibile installarla
-- inserire link libreria
-- creare per bene notebook
+- Funzione per i top n link
+- Riportare tutti i commenti e la doc in inglese
+- Finire readme libreria
+- FInire readme progetto
+- Aggiungere link alla documentazione
