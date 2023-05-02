@@ -74,18 +74,18 @@ To use the project, you need to perform the following steps:
 2. **Install dependencies**: The project uses several Python libraries, such as pandas, networkx and social-network-link-prediction. Make sure you have them installed before proceeding. To install this we suggest to create a virtual environments and install the requirements presente in `requirements.txt` file :open_file_folder: using the following command steps:
 - Create a virtual environment:
     ```bash
-    virtualenv network_venv
+    virtualenv venv_snlp
     ```
 - Activate venv to install project requirements
     ```bash
-    source ACO_project/bin/activate
+    source venv_snlp/bin/activate
     ```
 - Move to project dir and Install requiremenst 
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Run the code**: The code comes in a Python Jupyter Notebook, which can be run using Jupyter. The code imports the dataset, performs data analysis and returns the results.
+3. **Run the code**: The code comes in a Python Jupyter Notebook (so in order to exevute it, use the virtual environment as kernel for the Notebook), which can be run using Jupyter. The code imports the dataset, performs data analysis and returns the results.
 
 <hr>
 
