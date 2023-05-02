@@ -57,6 +57,14 @@ For a more in-depth explanation of each method, we refer to the `LinkPrediction.
 <hr>
 
 ### Project results :books:
+The following are some example results obtainad by applyng some link prediction methods.
+
+These are the original social network plot:
+<img src="imgs/network.png" width="100%" />
+
+And here you can see the results after appliyng the `sthocastick_block_model` as link prediction method
+<img src="imgs/network2.png" width="100%" />
+
 
 <hr>
 

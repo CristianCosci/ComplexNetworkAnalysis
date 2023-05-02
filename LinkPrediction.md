@@ -18,7 +18,7 @@ Consider a simple undirected network $G(V, E)$ (Refer to the Figure 1), where $V
 
 |   |   |
 | - | - |
-|<img src="latex/capitoli/intro/imgs/img1.png" width="100%" height="100%"> | Network representation as a graph. |
+|<img src="imgs/img1.png" width="100%" height="100%"> | Network representation as a graph. |
 
 
 
@@ -55,7 +55,7 @@ Recently, numerous methodologies of link prediction have been implemented. These
 &nbsp;&nbsp;2.4.3 [**Clustering-based Link Prediction**](#243-clustering-based-link-prediction)<br>
 &nbsp;&nbsp;2.4.4 [**Structural Perturbation Method**](#244-structural-perturbation-method)<br>
 
-<img src="latex/capitoli/methods/imgs/img2.jpg" width="60%" height="60%"> 
+<img src="imgs/img2.jpg" width="60%" height="60%"> 
 
 ## 2.1 **Similarity-based methods**
 Similarity-based metrics are the simplest one in link prediction, in which for each pair $x$ and $y$, a similarity score $S(x, y)$ is calculated. The score $S(x, y)$ is based on the structural or node’s properties of the considered pair. The non-observed links (i.e., $U − E^T$ ) are assigned scores according to their similarities. **The pair of nodes having a higher score represents the predicted link between them**. The similarity measures between every pair *can be calculated using several properties of the network*, one of which is structural property. Scores based on this property can be grouped in several categories like **local and global**, and so on.
@@ -86,7 +86,7 @@ shows good performance on heterogeneous networks with a high clustering coeffici
 - `CAR-based Common Neighbor Index (CAR)`: CAR-based indices are presented based on the assumption that the link existence between two nodes is more likely if their common neighbors are members of a local community (local-community-paradigm (LCP) theory). In other words, the likelihood existence increases with the number of links among the common neighbors (local community links (LCLs)) of the seed node pair as described in the following figure.
     $$S(x, y) = CN(x, y) \text{ x } LCL(x, y) = CN(x, y) \text{ x } \sum_{z \in \Gamma(x) \cap \Gamma(y)} \frac{|\gamma(z)|}{2} $$
     where $CN(x, y) = |\Gamma(x) ∩ \Gamma(y)|$ is number of common neighbors. $LCL(x, y)$ refers to the number of local community links which are defined as the links among the common neighbors of seed nodes x and y. $\gamma(z)$ is the subset of neighbors of node $z$ that are also common neighbors of $x$ and $y$. <br>
-    <img src="latex/capitoli/methods/imgs/img3.png" width="70%" height="70%"> 
+    <img src="imgs/img3.png" width="70%" height="70%"> 
 - `CAR-based Adamic/Adar Index (CAA)`: If $LCL$ is considered as an accuracy enhancer, then the $CAA$ index is obtained by incorporating the $LCL$ theory to the well known AA index and mathematically expressed by the equation given below.
     $$S(x, y) = \sum_{z \in \Gamma(x) \cap \Gamma(y)} \frac{|\gamma(z)|}{\log_2(k_z)} $$
 - `CAR-based Resource Allocation Index (CRA)`: Is a general application of the LCL theory to other indices and generate the CRA index by incorporating this concept into the existing RA index of the literature. Mathematically, the CRA can be expressed as
@@ -201,7 +201,7 @@ For a given network $G(V, E)$, ***the probabilistic model optimizes an objective
 
 They presented an idea of a central neighborhood set derived from the local topology of the considered node-pair, which is relevant information for the estimation of a link between them. They computed non-derivable frequent itemsets (i.e., those itemsets whose occurrence statistics can not be derived from other itemset patterns) from the network events log data, which is further used as training data for the model. An event corresponds to a publication of a paper (i.e., authors’ interactions in the paper is a an event, and a set of such events is the event log) in the Coauthorship network. The model is shown in the following Figure, which considers the approach described below.
 
-<img src="latex/capitoli/methods/imgs/img7.png" width="80%" height="60%">
+<img src="imgs/img7.png" width="80%" height="60%">
 
 
 First, the central neighborhood set between $x$ and $y$ is calculated based on local event log data. One of the usual ways to find the central neighborhood set is to find the **shortest path between two vertices of specified length**, and the vertices are lying on this path can be included in the required set. There can be more than one shortest path between two vertices, so more neighborhood sets can be possible. Neighborhood sets of shorter lengths and more frequent (frequency score is used when more shortest paths of the same length are available) are chosen for the central neighborhood set. The authors considered the shortest path up to length 4 since the nodes lying on the shorter length path are more relevant.
@@ -241,7 +241,7 @@ This can be understood with the following example illustrated in the next Figure
 
 |   |   |
 | - | - |
-|<img src="latex/capitoli/methods/imgs/img8.png" width="100%" height="100%"> | An illustrating example of `HSM` <br> for a graph of 6 nodes and its <br> two possible dendrograms. <br> The internal nodes of each <br> dendrogram are labeled as <br> the maximum likelihood <br> probability $\overline{p}_r$. The likelihoods <br> of the left and the right dendrograms <br> are $L(D1) = (1/3)(2/3)^2 (1/4)^2(3/4)^6$ <br> $= 0.00165$, and <br> $L(D2) = (1/9)(8/9)^8 = 0.0433$. <br>Thus, the second (i.e., right) <br> dendrogram is most probable as it divides <br> the network in a balanced one at the first level. |
+|<img src="imgs/img8.png" width="100%" height="100%"> | An illustrating example of `HSM` <br> for a graph of 6 nodes and its <br> two possible dendrograms. <br> The internal nodes of each <br> dendrogram are labeled as <br> the maximum likelihood <br> probability $\overline{p}_r$. The likelihoods <br> of the left and the right dendrograms <br> are $L(D1) = (1/3)(2/3)^2 (1/4)^2(3/4)^6$ <br> $= 0.00165$, and <br> $L(D2) = (1/9)(8/9)^8 = 0.0433$. <br>Thus, the second (i.e., right) <br> dendrogram is most probable as it divides <br> the network in a balanced one at the first level. |
 
 ### 2.2.4 **Stochastic block model (SBM)**
 
@@ -287,12 +287,12 @@ The curse of dimensionality is a well-known problem in machine learning. Some re
 ### 2.3.1 **Embedding-based link prediction**
 The network embedding is considered as a dimensionality reduction technique in which higher $D$ dimensional nodes (vertices) in the graphs are mapped to a lower $d$ ( $d << D$ ) **dimensional representation (embedding)** space by preserving the node neighborhood structures. In other words, ***find the embedding of nodes to a lower d-dimensions such that similar nodes (in the original network) have similar embedding (in the representation space)***. <br>
 In the Figure below you can see an application example of a dimensionality reduction technique to a graph that represent a social network. <br>
-<img src="latex/capitoli/methods/imgs/img4.png" width="80%" height="80%">
+<img src="imgs/img4.png" width="80%" height="80%">
 
 The main component of the network embedding is the encoding function or encoder $f_{en}$ that map each node to the embedding space
 $$f_{en}(x) = z_x$$
 where $z_x$ is the $d$-dimensional embedding of the node $x$. The embedding matrix is $Z \in R^{d x |V|}$ , each column of which represents an embedding vector of a node. <br> 
-<img src="latex/capitoli/methods/imgs/img5.png" width="80%" height="80%">
+<img src="imgs/img5.png" width="80%" height="80%">
 
 Now, a similarity function is $S(x, y)$ is defined that specifies how to model the vector (embedding) space relationships equivalent to the relationships in the original network, i.e.,
 $$S(x, y) \approx z_x^T z_y$$
@@ -371,7 +371,7 @@ The author treats the link occurrence probability as governed by $t$ link genera
 
 |   |   |
 | - | - |
-|<img src="latex/capitoli/methods/imgs/img6.png" width="100%" height="100%"> | An example illustrating the cycle <br> formation link probability model. |
+|<img src="imgs/img6.png" width="100%" height="100%"> | An example illustrating the cycle <br> formation link probability model. |
 
 Consider a cycle formation model ( $CF (k)$ ) of degree $(k = 3)$. The Seed link $(x, y)$, here, can be generated by the following three
 mechanisms:
