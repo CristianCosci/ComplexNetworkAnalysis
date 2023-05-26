@@ -272,8 +272,7 @@ Practically, solving equation $R_{xy} = \ldots$ , i.e., summing over all possibl
 The authors employed the link reliability concept to find missing links and to identify the spurious link in the networks with the following procedure.
 
 - $(i)$ Generate the observed network $A^0$ by removing/adding some random links (for finding missing/spurious links) from/to the true network $A^t$ . 
-- $(ii)$ Compute the link reliability for non-observed links (i.e.
-non-existing $+$ missing/spurious links). 
+- $(ii)$ Compute the link reliability for non-observed links (i.e. non-existing $+$ missing/spurious links). 
 - $(iii)$ Arrange these links with their reliability score in decreasing order and decide the top-l links as desired ones (i.e., missing/spurious links).
 
 Probabilistic and maximum likelihood methods extract useful features and valuable correlation among the data using hierarchical and stochastic block models, which result in significant improvements in prediction results as compared to some similarity-based methods. However, these are **quite complex and time-consuming even on small datasets** that limit their applicability on large scale real-world network datasets.
